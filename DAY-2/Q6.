@@ -1,0 +1,21 @@
+// Write a program to Reverse a number  
+
+#include <iostream>
+using namespace std;
+int main() {
+    int n;
+    int rn = 0;
+
+    cout << "Enter an integer: ";
+    cin >> n;
+
+    while (n != 0) {
+        int rem = n % 10;
+        rn = rn * 10 + rem;
+        n /= 10;
+    }
+
+    cout << "Reversed number: " << rn << endl;
+
+    return 0;
+}
