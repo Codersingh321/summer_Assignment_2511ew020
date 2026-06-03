@@ -1,0 +1,29 @@
+// Write a program to Print prime numbers in a range
+
+#include <iostream>
+using namespace std;
+int main() {
+    int start, end;
+    cout << "Enter start and end of range: ";
+    cin >> start >> end;
+
+    cout << "Prime numbers in range: ";
+    for (int i = start; i <= end; i++) {
+        if (i <= 1) continue;
+        
+        bool is_prime = true;
+        for (int j = 2; j * j <= i; j++) {
+            if (i % j == 0) {
+                is_prime = false;
+                break;
+            }
+        }
+        
+        if (is_prime) {
+            cout << i << " ";
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
