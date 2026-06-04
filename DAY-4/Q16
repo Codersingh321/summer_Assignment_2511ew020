@@ -1,0 +1,37 @@
+// Write a program to Print Armstrong numbers in a range
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() {
+    int start, end;
+
+    cout << "Enter start and end of range: ";
+    cin >> start >> end;
+
+    cout << "Armstrong numbers in range: ";
+    for (int i = start; i <= end; i++) {
+        int temp = i;
+        int digits = 0;
+        int sum = 0;
+
+        while (temp > 0) {
+            digits++;
+            temp /= 10;
+        }
+
+        temp = i;
+        while (temp > 0) {
+            int rem = temp % 10;
+            sum += pow(rem, digits);
+            temp /= 10;
+        }
+
+        if (sum == i) {
+            cout << i << " ";
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
