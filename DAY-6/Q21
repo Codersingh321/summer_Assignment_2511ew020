@@ -1,0 +1,24 @@
+// Write a program to Convert decimal to binary
+
+#include <iostream>
+using namespace std;
+int main() {
+    int n;
+    long long binary = 0;
+    long long place = 1;
+
+    cout << "Enter a decimal number: ";
+    cin >> n;
+
+    int temp = n;
+    while (temp > 0) {
+        int rem = temp % 2;
+        binary += rem * place;
+        place *= 10;
+        temp /= 2;
+    }
+
+    cout << "Binary: " << binary << endl;
+
+    return 0;
+}
