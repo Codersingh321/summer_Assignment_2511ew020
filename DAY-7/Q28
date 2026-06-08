@@ -1,0 +1,25 @@
+// Write a program to Recursive reverse number
+
+#include <iostream>
+using namespace std;
+
+int reverse_number(int n, int rn) {
+    if (n == 0) {
+        return rn;
+    }
+    rn = rn * 10 + (n % 10);
+    return reverse_number(n / 10, rn);
+}
+
+int main() {
+    int n;
+
+    cout << "Enter an integer: ";
+    cin >> n;
+
+    int rn = reverse_number(n, 0);
+
+    cout << "Reversed number: " << rn << endl;
+
+    return 0;
+}
